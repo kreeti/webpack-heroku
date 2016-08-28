@@ -8,7 +8,7 @@ module.exports = {
     const publicPath = express.static(path.join(__dirname, 'public'))
 
     app.use('/public', publicPath)
-    app.get('/', function (_, res) { res.sendFile(indexPath) })
+    app.get('/', function (_, res) { res.json({ status: "error", data: "There was a problem with the request"      } ); })
 
     return app
   }
